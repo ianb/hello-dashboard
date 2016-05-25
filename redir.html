@@ -1,0 +1,19 @@
+<html>
+<script>
+var days = location.hash.replace(/^#*/, "");
+if (! days) {
+  days = 1;
+} else {
+  days = parseInt(days, 10);
+}
+var date = Date.now();
+date -= days * (24 * 60 * 60 * 1000);
+date = new Date(date);
+date = date.toISOString();
+var loc =
+"https://github.com/mozilla/loop/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Amerged+-author%3Agreenkeeperio-bot+merged%3A%3E%3D";
+loc += date;
+location.replace(loc);
+</script>
+</html>
+
